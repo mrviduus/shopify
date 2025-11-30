@@ -9,6 +9,6 @@ public class Program
     public static void Main(string[] args)
     {
         var json = File.ReadAllText("input.json");
-        // var models = JsonSerializer.Deserialize<List<Model>>(json);
+        // var models = JsonSerializer.Deserialize<List<T>>(json);
     }
 }
