@@ -1,16 +1,17 @@
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace App;
 //claude --dangerously-skip-permissions
+
 public record Order(string Id, string Customer, List<Item> Items);
 public record Item(string Sku, int Quantity);
 
-
 public class Program
 {
-    public static async Task Main(string[] args)
+    public static void Main(string[] args)
     {
-        var json = await File.ReadAllTextAsync("input.json");
+        var json = File.ReadAllText("input.json");
         var orders = JsonSerializer.Deserialize<List<Order>>(json);
 
         foreach (var order in orders!)
